@@ -18,16 +18,17 @@ spring:
         activity-beans:
           - ProcessingActivities
         capacity:
-          max-concurrent-workflow-task-executors: 1
-          max-concurrent-activity-executors: 1
-          max-concurrent-workflow-task-pollers: 1
-          max-concurrent-activity-task-pollers: 1
+          max-concurrent-workflow-task-executors: 2
+          max-concurrent-activity-executors: 2
+          max-concurrent-local-activity-executors: 0
+          max-concurrent-workflow-task-pollers: 2
+          max-concurrent-activity-task-pollers: 2
         rate-limits:
           max-worker-activities-per-second: 5.0
           max-task-queue-activities-per-second: 5.0
     workflow-cache:
 #      max-instances: 10
-      max-threads: 10
+      max-threads: 20
 #    workersAutoDiscovery:
 #      packages: io.temporal.replaydemo.workers
   datasource:
@@ -45,9 +46,6 @@ spring:
       enabled: true
 # actuator (sdk metrics)
 management:
-  endpoint:
-    info:
-      enabled: true
   endpoints:
     web:
       exposure:

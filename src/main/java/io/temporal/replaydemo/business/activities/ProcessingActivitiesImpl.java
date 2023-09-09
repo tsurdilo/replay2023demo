@@ -8,6 +8,10 @@ import org.springframework.stereotype.Component;
 public class ProcessingActivitiesImpl implements ProcessingActivities {
     @Override
     public void test() {
+        try {
+            Thread.sleep(2 * 1000);
+        } catch (Exception e) {
 
+        }
     }
 }
