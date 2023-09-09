@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ReplaydemoApplication {
+public class ReplayDemoApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(ReplaydemoApplication.class, args).start();;
+		SpringApplication.run(ReplayDemoApplication.class, args).start();;
 	}
 }
