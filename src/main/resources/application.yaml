@@ -8,11 +8,9 @@ spring:
   temporal:
     namespace: default
     connection:
-      #change this before moving to docker deployment
       target: host.docker.internal:7233
     workers:
       - task-queue: TradeQueue
-          # name: your-worker-name # unique name of the Worker. If not specified, Task Queue is used as the Worker name.
         workflow-classes:
           - io.temporal.replaydemo.business.workflows.TradeProcessingImpl
         activity-beans:

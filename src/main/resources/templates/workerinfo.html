@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: samples-header"></head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Worker Info</h3>
+            <br/>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <br/>
+                        <div class="inventory_data">
+                            <table class="table table-striped" th:fragment="resources">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th>Identity</th>
+                                    <th>Target</th>
+                                    <th>Namespace</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td th:text="${client.options.identity}">Identity</td>
+                                    <td th:text="${temporal.connection.target}">Target</td>
+                                    <td th:text="${client.options.namespace}">Namespace</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">Registered Worker Resources:</h3>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <br/>
+                        <div class="inventory_data" th:each="worker : ${temporal.workers}">
+                            <table class="table table-striped" th:fragment="resources">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th>Task Queue</th>
+                                    <th>Registered Workflows</th>
+                                    <th>Registered Activity Beans</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td th:text="${worker.taskQueue}">Task Queue</td>
+                                    <td><span th:each="wfi : ${worker.workflowClasses}">
+                                        <span th:text="${wfi.simpleName}"></span>
+                                    </span></td>
+                                    <td><span th:each="ab : ${worker.activityBeans}">
+                                        <span th:text="${ab}"></span>
+                                    </span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="fragments :: samples-footer"></footer>
+</body>
+</html>
