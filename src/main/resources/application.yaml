@@ -10,11 +10,11 @@ spring:
     connection:
       target: host.docker.internal:7233
     workers:
-      - task-queue: TradeQueue
+      - task-queue: DemoTaskQueue
         workflow-classes:
-          - io.temporal.replaydemo.business.workflows.TradeProcessingImpl
+          - io.temporal.replaydemo.business.workflows.DemoWorkflowOneImpl
         activity-beans:
-          - ProcessingActivities
+          - DemoOneActivities
         capacity:
           max-concurrent-workflow-task-executors: 2
           max-concurrent-activity-executors: 2
