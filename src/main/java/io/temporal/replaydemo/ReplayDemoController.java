@@ -15,10 +15,10 @@ public class ReplayDemoController {
     @Autowired
     WorkflowClient workflowClient;
 
-    @GetMapping("/workerinfo")
+    @GetMapping("/")
     public String update(Model model) {
         model.addAttribute("temporal", temporalProperties);
         model.addAttribute("client", workflowClient);
-        return "workerinfo";
+        return "index";
     }
 }
