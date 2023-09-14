@@ -19,13 +19,13 @@ spring:
           - DemoTwoActivities
         capacity:
           max-concurrent-workflow-task-executors: 2
-          max-concurrent-activity-executors: 2
+          max-concurrent-activity-executors: 1
           max-concurrent-local-activity-executors: 0
           max-concurrent-workflow-task-pollers: 2
           max-concurrent-activity-task-pollers: 2
-        rate-limits:
-          max-worker-activities-per-second: 5.0
-          max-task-queue-activities-per-second: 5.0
+#        rate-limits:
+#          max-worker-activities-per-second: 5.0
+#          max-task-queue-activities-per-second: 5.0
     workflow-cache:
 #      max-instances: 10
       max-threads: 20

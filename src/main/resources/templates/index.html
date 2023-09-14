@@ -52,12 +52,33 @@
                                 <tbody>
                                 <tr>
                                     <td th:text="${worker.taskQueue}">Task Queue</td>
-                                    <td><span th:each="wfi : ${worker.workflowClasses}">
-                                        <span th:text="${wfi.simpleName}"></span>
-                                    </span></td>
+                                    <td>
+                                        <span th:each="wfi : ${worker.workflowClasses}">
+                                            <span th:text="${wfi.simpleName}"></span>
+                                            <br/>
+                                        </span>
+                                    </td>
                                     <td><span th:each="ab : ${worker.activityBeans}">
-                                        <span th:text="${ab}"></span>
+                                        <span th:text="${ab}"></span><br/>
                                     </span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-striped" th:fragment="resources">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th>Workflow Executors</th>
+                                    <th>Activity Executors</th>
+                                    <th>Workflow Pollers</th>
+                                    <th>Activity Pollers</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td th:text="${worker.capacity.maxConcurrentWorkflowTaskExecutors}">Wf Executors</td>
+                                    <td th:text="${worker.capacity.MaxConcurrentActivityExecutors}">Act Executors</td>
+                                    <td th:text="${worker.capacity.MaxConcurrentWorkflowTaskPollers}">Wf Pollers</td>
+                                    <td th:text="${worker.capacity.MaxConcurrentActivityTaskPollers}">Act Pollers</td>
                                 </tr>
                                 </tbody>
                             </table>

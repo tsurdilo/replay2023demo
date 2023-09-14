@@ -5,7 +5,7 @@ mvn clean install
 docker-compose up --build --detach
 
 # scale to 2 workers
-docker-compose up -d --build --scale replaydemo-worker=2
+docker-compose up -d --build --scale replaydemo-worker=5
 
 
 # actuator metrics (sdk metrics)

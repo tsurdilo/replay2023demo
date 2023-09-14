@@ -14,4 +14,4 @@ services:
       dockerfile: Dockerfile
     image: replaydemo-workers:latest
     ports:
-      - 19998-19999:9999
+      - 19994-19999:9999
