@@ -32,11 +32,11 @@ public class DemoOneActivitiesImpl implements DemoOneActivities {
         try {
             Resource resource = resourceLoader.getResource("classpath:/static/sample.jpg");
             InputStream resourceInputStream = resource.getInputStream();
-//            return new BufferedReader(
-//                    new InputStreamReader(resourceInputStream, StandardCharsets.UTF_8))
-//                    .lines()
-//                    .collect(Collectors.joining("\n"));
-            return resource.getURL().toString();
+            return new BufferedReader(
+                    new InputStreamReader(resourceInputStream, StandardCharsets.UTF_8))
+                    .lines()
+                    .collect(Collectors.joining("\n"));
+//            return resource.getURL().toString();
         } catch (Exception e) {
             System.out.println("** Activity failure: " + e.getMessage());
             return null;

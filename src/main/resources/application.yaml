@@ -15,8 +15,8 @@ spring:
           - io.temporal.replaydemo.business.workflows.DemoOneWorkflowImpl
           - io.temporal.replaydemo.business.workflows.DemoTwoWorkflowImpl
         activity-beans:
-          - DemoOneActivities
-          - DemoTwoActivities
+#          - DemoOneActivities
+#          - DemoTwoActivities
         capacity:
           max-concurrent-workflow-task-executors: 2
           max-concurrent-activity-executors: 1
